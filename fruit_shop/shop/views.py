@@ -1,3 +1,14 @@
+from django.http import HttpResponse
 from django.shortcuts import render
+from shop.models import *
 
-# Create your views here.
+
+def shop(request):
+    return render(request, 'shop/market.html')    
+
+
+def index(request):
+    return render(request, 'shop/market.html') 
+
+def logout(request):
+    return render(request, 'shop/logout.html')        
