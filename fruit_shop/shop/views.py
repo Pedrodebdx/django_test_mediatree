@@ -8,26 +8,23 @@ from django.contrib.auth.decorators import login_required
 
 
 def index(request): # index with login
-    try:
-        user_id = request.POST['username']
-        password = request.POST['password']
-        user = authenticate(request, username=user_id, password=password)
-        if user is not None:
-            login(request, user)
-            return render(request, 'shop/market.html')   # to return market page, after login 
-        else:
-            return HttpResponse('<h1>Utilisateur ou mot de passe invalide, faite retour pour réessayer/h1>')    
-    except:
-        return HttpResponse('<h1>PASS : Utilisateur ou mot de passe invalide, faite retour pour réessayer/h1>')           
+    if request.method == 'POST':
+        formulaire_login= formulaire_login(request.POST)
+
+    user = authenticate(request,user_id='admin', user_password='12345')
+    if user is not None:
+        login(request, user)
+        print("LOG OK")
+        return render(request, 'shop/market.html')
+    else:
+        print("NON LOG")
+        return render(request, 'shop/index.html')   
+     
 
 # @login_required #décorateur pour authentification
 def shop(request):
     products = Produits.objects.all()  
-  # if not request.user.is_authenticated:
-    #    return render(request, 'shop/market.html', produits)   # to return market page, after login 
-    # if not request.user.is_authenticated:
-    #     return render(request, 'index.html')
-   
+  
     return render(request, 'shop/market.html', {"products": products}) 
 
 def logout_view(request):
