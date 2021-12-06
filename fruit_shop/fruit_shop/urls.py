@@ -19,7 +19,7 @@ from shop import views
 
 
 urlpatterns = [
-    path('', views.index),
-    path('market/', views.shop),
-    path('logout/', views.logout),    
+    path('', views.index),  # '' for index
+    path('market/', views.shop), # market page
+    path('logout/', views.logout),    # logout  page
 ]

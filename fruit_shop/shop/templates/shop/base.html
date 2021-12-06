@@ -1,16 +1,44 @@
 {% load static %}
 
+<!DOCTYPE html>
 <html>
 
 <head>
-    <title>Fruuit Shop</title>
-    <link rel="stylesheet" href="{% static 'shop/styles.css' %}" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Fruit Shop </title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
 </head>
 
 <body>
-    <p> début de base.html</p>
-    {% block content %}{% endblock %}
-    <p> fin de base.html</p>
+
+
+
+
+    {% block content %}
+    <!-- contenu du shop --> {% endblock %}
+
+
+    {% block footer %}
+    <footer class="footer">
+        <div class="container">
+            <div class="content has-text-centered">
+                <p>
+                    <strong>Fruit Shop</strong> by Pierre-Vincent FERRAT pour le test de Mediatree.</a>
+                </p>
+                <p>
+                    <strong>Lien vers le repos </strong>
+                    <a class="icon" href="https://github.com/Pedrodebdx/django_test_mediatree">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </p>
+            </div>
+        </div>
+    </footer>
+    {% endblock footer %}
+
+
+
 </body>
 
 </html>
