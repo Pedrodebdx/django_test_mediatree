@@ -1,0 +1,22 @@
+{% extends 'registration/base.html' %}
+
+{% block content %}
+
+
+<div class="container"></div>
+    
+        <h1>Se loguer</h1>
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+
+            <button class= "btn btn-primary" type="submit" name= "button" >Valider l'inscription</button> <!-- validation of inscription -->
+            <a class="btn btn-secondary" href="{% url 'index' %}" >Annuler</a>   <!-- return to index if you want -->
+        </form>
+</div>
+
+
+
+
+
+{% endblock %}

@@ -2,29 +2,69 @@
 
 {% block content %}
 
-<h1>Bienvenus sur le market des fruits</h1>
-<br>
-<p>Pour entrer, merci de vous loguer avec les identifiants qui vous ont été fournis</p>
-<br>
-
-<form action="/formulaire_login/" method="post"></form>
-<div class="field">
-    <label class="label">Nom d'utilisateur</label>
-    <div class="control">
-        <input class="input" type="text" placeholder="Text input">
-    </div>
-
-    <label class="label">Mot de passe</label>
-    <div class="control">
-        <input class="input" type="text" placeholder="Text input">
-    </div>
 
 
-    <div class="field is-grouped">
-        <div class="control">
-            <button class="button is-link">Valider</button>
-        </div>
+<div class="text-center">
+    <h1>Bienvenus sur le market des fruits</h1>
+</div>
+
+<!-- to display message, if exist -->
+<div class="container">
+    <div class="mt-2">
+        {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+                {% endfor %}
+        </ul>
+        {% endif %}
     </div>
 </div>
-</form>
+
+<!-- Buttons  -->
+<div class="card mt-4">
+    <div class="card-body text-center">
+      <a class="btn btn-secondary" href="{% url 'signup' %}">Sign Up</a>
+      <a class="btn btn-primary" href="{% url 'login' %}">Log In</a>
+    </div>
+  </div>
+
+<!-- <div class="container">
+    <div class="card mt-4">
+        <div class="card-body">
+            <div class="text-center">
+
+                <form action="/formulaire_loginXXXXX/" method="post"></form>
+                <div class="field">
+                    <label class="label">Nom d'utilisateur</label>
+                    <div class="control">
+                        <input class="input" type="text" placeholder="Text input">
+                    </div>
+                
+                    <label class="label">Mot de passe</label>
+                    <div class="control">
+                        <input class="input" type="text" placeholder="Text input">
+                    </div>
+                
+                    <div class="field is-grouped">
+                        <div class="control">
+                            <button class="button is-link">Valider</button>
+                        </div>
+                    </div>
+                </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div> -->
+
+
+
+
+
+
+
+
+
 {% endblock %}

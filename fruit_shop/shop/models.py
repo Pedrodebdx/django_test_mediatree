@@ -15,7 +15,13 @@ class Produits(models.Model): # types of products
     picture_url = models.fields.URLField(null=True, blank=True)
 
 
-class User(models.Model):
-    REQUIRED_FIELDS = ('user_id','user_password')
-    user_id = models.fields.CharField(max_length=100, unique=True)
-    user_password = models.fields.CharField(max_length=100)
+# class User(models.Model):
+#     REQUIRED_FIELDS = ('user_id','user_password')
+#     user_id = models.fields.CharField(max_length=100, unique=True)
+#     user_password = models.fields.CharField(max_length=100)
+
+# from django import forms
+
+# class LoginForm(forms.Form):
+#     user_id = forms.CharField(required=True,max_length=100)
+#     password = forms.CharField(required=True,max_length=100)

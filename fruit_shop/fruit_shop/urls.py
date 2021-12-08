@@ -16,12 +16,19 @@ Including another URLconf
 #from django.contrib import admin
 from django.urls import path
 from shop import views
-
+from django.contrib import admin
+from django.contrib.auth import views as auth_views
 
 urlpatterns = [
-    path('', views.index),  # '' for index
-    path('market/', views.shop), # market page
-    path('logout/', views.logout),   # logout  page
+    path('', views.index, name="index"),  # '' for index
+    path('market/', views.shop),                                    # market page
+    path('signup/', views.signup,name="signup"), 
+    path('login/', auth_views.LoginView.as_view(), name = "login"),
+    path('logout/', views.logout,name="logout"),                    # logout  page
+    path('admin/', admin.site.urls),
+
+    
+    
 
 ]
 
