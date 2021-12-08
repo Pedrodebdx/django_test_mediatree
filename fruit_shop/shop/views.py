@@ -49,7 +49,7 @@ def signup(request):
             form.save()
 
             messages.success(request, "Nouvel utilisateur crée, vous pouvez maintenant vous loguer")
-            return redirect('app:index')
+            return render(request, 'shop/index.html')
     else:
         form = UserCreationForm()
 

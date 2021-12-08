@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'shop', # to add my app shop to django
-    # 'accounts' #for login
+    'templates'
+
 ]
 
 MIDDLEWARE = [
