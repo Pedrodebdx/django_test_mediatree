@@ -5,7 +5,7 @@ from django.contrib.auth import authenticate, login  # login
 from django.contrib.auth import logout  #logout
 from django.contrib.auth.models import User
 from .forms import *
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required # to restrict page of market
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
 
@@ -34,10 +34,9 @@ def index(request): # index with login
         return render(request, 'shop/index.html')
      
 
-# @login_required #décorateur pour authentification
+@login_required #decorator to  restrict page of market
 def shop(request):
     products = Produits.objects.all().order_by('stock')  #select all product of db and order by stock
-  
     return render(request, 'shop/market.html', {"products": products}) #return html page ans dictionnary of products
 
 
@@ -55,8 +54,6 @@ def signup(request):
 
     return render(request, "registration/signup.html", {"form":form})   
 
-def login(request):
-    return render(request, 'login/')        
 
 def logout_view(request):
     logout(request)
