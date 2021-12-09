@@ -51,4 +51,5 @@ to install > sudo apt install python3-pip
 
 # Work in progress
 - cart of market
+- unit tests
 
