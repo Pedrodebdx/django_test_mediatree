@@ -43,7 +43,7 @@ to install > sudo apt install python3-pip
 7.Adresse 
 > http://127.0.0.1:8000/
 
-#Unit test
+# Unit test
 to run test > python3 manage.py test
 
 # What works:
